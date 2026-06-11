@@ -1,0 +1,39 @@
+name: Check Flight Deals
+
+on:
+  schedule:
+    - cron: "0 7 * * 1" # Monday 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check flight deals
+        run: python src/check_flights.py
+        env:
+          AMADEUS_CLIENT_ID: ${{ secrets.AMADEUS_CLIENT_ID }}
+          AMADEUS_CLIENT_SECRET: ${{ secrets.AMADEUS_CLIENT_SECRET }}
+
+      - name: Commit updated deals
+        run: |
+          git config user.name "flight-bot"
+          git config user.email "bot@example.com"
+          git add data/deals.json
+          git commit -m "Update flight deals" || echo "No deal changes to commit"
+          git push
