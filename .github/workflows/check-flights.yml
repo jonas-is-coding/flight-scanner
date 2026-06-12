@@ -26,9 +26,6 @@ jobs:
 
       - name: Check flight deals
         run: python src/check_flights.py
-        env:
-          AMADEUS_CLIENT_ID: ${{ secrets.AMADEUS_CLIENT_ID }}
-          AMADEUS_CLIENT_SECRET: ${{ secrets.AMADEUS_CLIENT_SECRET }}
 
       - name: Commit updated deals
         run: |
