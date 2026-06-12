@@ -4,11 +4,42 @@ import type { FlightDeal } from "@/types/deal";
 export const dynamic = "force-dynamic";
 
 const routeNames: Record<string, string> = {
-  ATH: "Athen",
-  IST: "Istanbul",
+  BCN: "Barcelona",
+  AGP: "Málaga",
+  VLC: "Valencia",
+  PMI: "Palma de Mallorca",
+  ALC: "Alicante",
+  MAD: "Madrid",
+  SVQ: "Sevilla",
+  IBZ: "Ibiza",
+  ARN: "Stockholm",
+  CPH: "Kopenhagen",
+  GOT: "Göteborg",
+  LIS: "Lissabon",
+  OPO: "Porto",
+  FAO: "Faro",
   NAP: "Neapel",
-  SAW: "Istanbul-Sabiha Gökçen",
+  BLQ: "Bologna",
+  BRI: "Bari",
+  CTA: "Catania",
+  PMO: "Palermo",
+  BDS: "Brindisi",
+  ATH: "Athen",
   SKG: "Thessaloniki",
+  CFU: "Korfu",
+  RHO: "Rhodos",
+  CHQ: "Chania (Kreta)",
+  BUD: "Budapest",
+  PRG: "Prag",
+  VIE: "Wien",
+  KRK: "Krakau",
+  WMI: "Warschau",
+  ZAD: "Zadar",
+  SPU: "Split",
+  DBV: "Dubrovnik",
+  TIA: "Tirana",
+  MLA: "Malta",
+  DUB: "Dublin",
 };
 
 const priceFormatter = new Intl.NumberFormat("de-DE", {
@@ -61,8 +92,9 @@ export default async function Home() {
         <p className="eyebrow">NRW Wochenendtrips</p>
         <h1 id="title">Flight Deal Radar</h1>
         <p className="subtitle">
-          Günstige Donnerstag-bis-Sonntag-Flüge ab DUS, CGN, DTM und PAD nach Istanbul,
-          Athen, Neapel und Thessaloniki — automatisch per Amadeus API aktualisiert.
+          Günstige Donnerstag-bis-Sonntag-Flüge ab NRW (CGN, NRN, DUS, DTM, PAD) zu vielen
+          europäischen Zielen — von Barcelona und Málaga über Stockholm und Kopenhagen bis
+          Valencia. Automatisch von Ryanair aktualisiert.
         </p>
         <dl className="stats" aria-label="Suchparameter">
           <div>
@@ -95,7 +127,7 @@ export default async function Home() {
           <h2>Keine günstigen Deals unter 160 € gefunden.</h2>
           <p>
             Der GitHub Actions Bot aktualisiert die Datei <code>data/deals.json</code>. Sobald
-            passende Amadeus-Angebote vorhanden sind, erscheinen sie hier automatisch.
+            passende Ryanair-Angebote vorhanden sind, erscheinen sie hier automatisch.
           </p>
         </section>
       )}
