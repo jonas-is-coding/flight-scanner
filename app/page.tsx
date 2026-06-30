@@ -40,6 +40,18 @@ const routeNames: Record<string, string> = {
   TIA: "Tirana",
   MLA: "Malta",
   DUB: "Dublin",
+  BEG: "Belgrad",
+  SOF: "Sofia",
+  OTP: "Bukarest",
+  VAR: "Warna",
+  GDN: "Danzig",
+  KTW: "Kattowitz",
+  WRO: "Breslau",
+  CLJ: "Cluj-Napoca",
+  IAS: "Iași",
+  TSR: "Timișoara",
+  SKP: "Skopje",
+  KUT: "Kutaissi",
 };
 
 const priceFormatter = new Intl.NumberFormat("de-DE", {
@@ -92,9 +104,9 @@ export default async function Home() {
         <p className="eyebrow">NRW Wochenendtrips</p>
         <h1 id="title">Flight Deal Radar</h1>
         <p className="subtitle">
-          Günstige Donnerstag-bis-Sonntag-Flüge ab NRW (CGN, NRN, DUS, DTM, PAD) zu vielen
-          europäischen Zielen — von Barcelona und Málaga über Stockholm und Kopenhagen bis
-          Valencia. Automatisch von Ryanair aktualisiert.
+          Günstige Donnerstag-bis-Sonntag-Flüge ab NRW und nahen Low-Cost-Airports
+          (CGN, NRN, DUS, DTM, PAD, FRA, HHN, EIN, BRU, CRL) zu vielen europäischen
+          Zielen. Automatisch aus öffentlichen Ryanair- und Wizz-Air-Daten aktualisiert.
         </p>
         <dl className="stats" aria-label="Suchparameter">
           <div>
@@ -127,7 +139,7 @@ export default async function Home() {
           <h2>Keine günstigen Deals unter 160 € gefunden.</h2>
           <p>
             Der GitHub Actions Bot aktualisiert die Datei <code>data/deals.json</code>. Sobald
-            passende Ryanair-Angebote vorhanden sind, erscheinen sie hier automatisch.
+            passende Ryanair- oder Wizz-Air-Angebote vorhanden sind, erscheinen sie hier automatisch.
           </p>
         </section>
       )}
